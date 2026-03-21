@@ -583,6 +583,11 @@ h2 {
   display: none;
 }
 
+#fullGallery{
+    max-height: fit-content;
+    padding-bottom: 10px;
+}
+
 @media (max-width: 1024px) {
   .full-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
