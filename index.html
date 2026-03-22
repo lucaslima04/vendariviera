@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   />
 
   <link rel="stylesheet" href="style.css" />
@@ -17,14 +16,14 @@
 <body>
   <header class="header">
     <div class="container nav">
-      <a href="#" class="logo">Riviera<span>Master</span></a>
+      <h3 class="logo">Riviera<span>Master</span></h3>
 
       <nav class="menu desktop-menu">
         <a href="#sobre">Sobre</a>
         <a href="#destaques">Diferenciais</a>
         <a href="#galeria">Galeria</a>
         <a href="#tour">Tour 360</a>
-        <a href="#preco">Preço</a>
+        <a href="#preco">Valor</a>
         <a href="#localizacao">Localização</a>
         <a href="#contato" class="btn btn-outline">Contato</a>
       </nav>
@@ -47,7 +46,7 @@
       <a href="#destaques">Diferenciais</a>
       <a href="#galeria">Galeria</a>
       <a href="#tour">Tour 360</a>
-      <a href="#preco">Preço</a>
+      <a href="#preco">Valor</a>
       <a href="#localizacao">Localização</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -70,7 +69,8 @@
 
         <div class="hero-buttons">
           <a href="#contato" class="btn btn-primary">Agendar visita</a>
-          <a href="#galeria" class="btn btn-secondary">Ver fotos</a>
+          <a href="#galeria" class="btn btn-secondary" style="color: #f5f2ea;
+    border-color: rgba(255, 251, 243, 0.55);">Ver fotos</a>
         </div>
       </div>
     </section>
@@ -113,10 +113,10 @@
           </p>
         </div>
 
-        <div class="about-image-card reveal" style="align-items: center; justify-content: center; display: flex; ">
+        <div class="about-image-card reveal">
           <img
             src="medias/ex3.avif"
-            alt="Fachada" style="height: 100%; scale: 1.2;"
+            alt="Fachada""
           />
         </div>
       </div>
@@ -225,7 +225,7 @@
       <div class="full-gallery-header">
         <div>
           <p class="section-tag">Galeria completa</p>
-          <h3 style="color: #1b1b1f;">Explore todos os ambientes</h3>
+          <h3 style="color: #f5f2ea;">Explore todos os ambientes</h3>
         </div>
 
         <button class="gallery-close" id="closeGalleryBtn" type="button" aria-label="Fechar galeria">
@@ -443,7 +443,7 @@
         <div class="container">
             <p class="section-tag center reveal">Tour 360</p>
             <h2 class="section-title center reveal">Explore o imóvel de forma imersiva</h2>
-            <p class="section-description center reveal" style="color: #f5f2ea;">
+            <p class="section-description center reveal" style="color: #0f0f12;">
             Conheça cada ambiente como se estivesse dentro da casa. Navegue pelos espaços, observe os detalhes e sinta a experiência antes mesmo da visita presencial.
             </p>
 
@@ -587,12 +587,34 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© 2026 RivieraMaster. Todos os direitos reservados.</p>
-      <p>Desenvolvido para apresentação do imóvel.</p>
+<footer class="footer">
+  <div class="container footer-content">
+
+    <div class="footer-brand">
+      <h3 class="logo">Riviera<span>Master</span></h3>
+      <p>Imóveis de alto padrão na Riviera de São Lourenço.</p>
     </div>
-  </footer>
+
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#destaques">Diferenciais</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#tour">Tour 360</a>
+      <a href="#preco">Valor</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+
+    <div class="footer-contact">
+      <p><strong>Agende sua visita</strong></p>
+      <a href="#" class="btn btn-primary">Falar no WhatsApp</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 RivieraMaster — Todos os direitos reservados</p>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>
