@@ -5,9 +5,9 @@
   --surface-soft: #0f0f12;
   --text: #0f0f12;
   --text-light: #e0e0e0;
-  --muted: #6d6d73;
+  --muted: #868686;
   --line: rgba(255, 255, 255, 0.08);
-  --gold: #c8a96b;
+  --gold: #d8b87a;
   --gold-dark: #a78649;
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
   --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.08);
@@ -74,9 +74,10 @@ button {
 
 .section-tag {
   font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
+  border-bottom: solid 1px #d8b87a;
   font-weight: 800;
   margin-bottom: 0.8rem;
 }
@@ -113,6 +114,7 @@ h2 {
   background: rgba(59, 59, 61, 0.45);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
 }
 
 .nav {
@@ -224,18 +226,16 @@ h2 {
 }
 
 .btn-primary:hover {
-  background: #d8b87a;
   box-shadow: 0 12px 30px rgba(200, 169, 107, 0.48);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.28);
   color: var(--gold-dark);
   border-color: rgba(201, 147, 32, 0.75);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.28);
   box-shadow: 0 12px 30px rgba(200, 169, 107, 0.48);
 }
 
@@ -306,7 +306,7 @@ h2 {
 }
 
 .quick-info {
-  background: var(--gold);
+  background: var(--bg);
   padding: 30px 60px;
   position: relative;
   z-index: 5;
@@ -319,13 +319,14 @@ h2 {
 }
 
 .quick-card {
-  background: var(--surface-soft);
+  background: rgba(59, 59, 61, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px inset #fff;
   color: #fff;
   padding: 2rem 1.5rem;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -338,7 +339,7 @@ h2 {
   display: block;
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-light);
+  color: var(--bg);
   margin-bottom: 0.35rem;
 }
 
@@ -403,13 +404,14 @@ h2 {
 }
 
 .highlight-card {
-  background: var(--bg-soft);
+  background: rgba(59, 59, 61, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px inset #fff;
   border-radius: var(--radius);
   padding: 2rem;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0, 0, 0, 0.04);
   transition: transform var(--transition), box-shadow var(--transition);
-  color: #a78649;
+  color: var(--bg);
 }
 
 .highlight-card:hover {
@@ -425,7 +427,7 @@ h2 {
 }
 
 .highlight-card p {
-  color: var(--text);
+  color: var(--text-light);
 }
 
 .gallery-grid {
@@ -464,23 +466,22 @@ h2 {
 }
 
 .btn-gallery {
-  background: var(--surface-soft);
-  color: var(--text-light);
-  border: 1px solid rgba(3, 3, 3, 0.08);
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
 }
 
 .btn-gallery:hover {
-  background: var(--gold);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
 }
 
 .full-gallery {
   margin-top: 2rem;
-  background: var(--surface-soft);
+  margin-bottom: 3rem;
+  background: var(--bg);
   border-radius: var(--radius);
   padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -521,7 +522,6 @@ h2 {
 
 .gallery-close:hover {
   transform: rotate(90deg);
-  background: var(--gold);
   box-shadow: 0 12px 30px rgba(200, 169, 107, 0.28);
 }
 
@@ -535,7 +535,7 @@ h2 {
 .filter-btn {
   padding: 0.85rem 1.2rem;
   border-radius: 999px;
-  background: var(--bg);
+  background: var(--bg-soft);
   color: var(--text);
   font-weight: 700;
   transition: var(--transition);
@@ -543,14 +543,12 @@ h2 {
 
 .filter-btn:hover {
   transform: translateY(-2px);
-  background: var(--muted);
-  color: var(--text-light);
   box-shadow: 0 12px 30px rgba(200, 169, 107, 0.28);
 }
 
 .filter-btn.active {
   background: var(--gold);
-  color: #111;
+  color: var(--bg-soft);
 }
 
 #galeria.section.gallery{
@@ -593,13 +591,14 @@ h2 {
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  background: rgba(201, 187, 107, 0.78);
   color: var(--surface);
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 700;
   backdrop-filter: blur(8px);
+  border: 1px inset #fff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
 }
 
 .full-gallery-item.hidden {
@@ -751,7 +750,7 @@ h2 {
 
 .tour-play {
   align-self: center;
-  background: rgba(200, 169, 107, 0.95);
+  background: var(--bg);
   color: #111;
   padding: 1rem 1.4rem;
   border-radius: 999px;
@@ -787,15 +786,14 @@ h2 {
 .value-item {
   padding: 1.4rem 1.4rem;
   border-radius: 18px;
-  background: var(--surface-soft);
-  color: #c8a96b;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--bg);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+  color: var(--text);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .value-item:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-soft);
 }
 
 .value-item strong {
@@ -805,20 +803,19 @@ h2 {
 }
 
 .value-item p {
-  color: var(--text-light);
+  color: var(--text);
 }
 
 .price-card {
-  background: var(--surface-soft);
-  color: #fff;
+  background: var(--bg);
   padding: 2rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
   position: relative;
 }
 
 .price-label {
   display: inline-block;
-  color: var(--gold);
+  color: var(--text);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -833,7 +830,7 @@ h2 {
 }
 
 .price-note {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text);
   margin-bottom: 1.4rem;
 }
 
@@ -841,7 +838,7 @@ h2 {
   display: grid;
   gap: 0.8rem;
   margin-bottom: 1.8rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--text);
 }
 
 .lifestyle {
@@ -990,6 +987,34 @@ h2 {
 
   .hero-text {
     font-size: 1rem;
+
+    
+  }
+
+  .quick-card{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem ;
+    border-radius: 1rem;
+  }
+
+  .quick-grid {
+    gap: 0.5rem;
+  }
+
+  .quick-info {
+    padding: 2rem;
+  }
+
+  .quick-card .number {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .quick-card .label {
+    font-size: 0.9rem;
   }
 
   .highlights-grid,
