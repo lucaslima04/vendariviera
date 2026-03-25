@@ -42,18 +42,51 @@ const fullGallery = document.getElementById("fullGallery");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const galleryItems = document.querySelectorAll(".full-gallery-item");
 
+function openGallery() {
+  fullGallery.classList.add("open");
+  fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
+
+  openGalleryBtn.textContent = "Fechar galeria";
+
+  setTimeout(() => {
+    fullGallery.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 50);
+}
+
+function closeGallery() {
+  fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
+
+  requestAnimationFrame(() => {
+    fullGallery.style.maxHeight = "0px";
+    fullGallery.classList.remove("open");
+  });
+
+  openGalleryBtn.textContent = "Ver galeria completa";
+}
+
 if (openGalleryBtn && fullGallery) {
   openGalleryBtn.addEventListener("click", () => {
-    fullGallery.classList.add("open");
-    fullGallery.scrollIntoView({ behavior: "smooth", block: "start" });
+    const isOpen = fullGallery.classList.contains("open");
+
+    if (isOpen) {
+      closeGallery();
+    } else {
+      openGallery();
+    }
   });
 }
 
 if (closeGalleryBtn && fullGallery) {
   closeGalleryBtn.addEventListener("click", () => {
-    fullGallery.classList.remove("open");
+    closeGallery();
   });
 }
+
+window.addEventListener("resize", () => {
+  if (fullGallery.classList.contains("open")) {
+    fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
+  }
+});
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -71,5 +104,9 @@ filterButtons.forEach((button) => {
         item.classList.add("hidden");
       }
     });
+
+    if (fullGallery.classList.contains("open")) {
+      fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
+    }
   });
 });
